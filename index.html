@@ -8,25 +8,26 @@
 </head>
 
 <body>
+  <h1>Hello</h1>
   <!-- 
     static DOM (html 태그로 구성하는 돔)
     dynamic DOM (자바스크립트로 구성하는 돔)
-
-    <article>
+    
     <a href="#">link</a>
-    </article>
-
+    
     template literal
     : 문자안에 변수를 편하게 삽입할때
  -->
   <script>
-    const url = 'https://www.naver.com';
-    const text = '네이버'
-    document.body.innerHTML = `
-    <article>
-      <a href="${url}">${text}</a>
-    </article>
-    `
+    const a = document.createElement('a');
+    const href = document.createAttribute('href');
+    const text = 'link';
+    href.value = '#'
+    a.setAttributeNode(href);
+    a.innerText = text;
+
+    //document.body.append(a);
+    document.body.prepend(a);
   </script>
 </body>
 
